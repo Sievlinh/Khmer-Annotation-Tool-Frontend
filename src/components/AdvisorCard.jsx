@@ -1,21 +1,28 @@
 import React from 'react';
 
 const AdvisorCard = ({ image, name, title, description, additionalInfo }) => {
+
   return (
-    <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-xs">
-      <div className="w-[200px] h-[200px] overflow-hidden rounded-full mb-4">
+    <div className="flex flex-col sm:flex-row items-start bg-white px-6 py-6 gap-6 max-w-3xl">
+      {/* Image section */}
+      <div className="bg-blue-100 p-1 w-96 h-96 overflow-hidden">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover"
         />
       </div>
-      <h3 className="text-xl font-semibold text-gray-800 mb-1 text-center">{name}</h3>
-      <p className="text-sm text-gray-500 mb-2 text-center">{title}</p>
-      <p className="text-sm text-gray-700 text-center">{description}</p>
-      {additionalInfo && (
-        <p className="mt-3 text-sm text-gray-500 text-center">{additionalInfo}</p>
-      )}
+
+      {/* Text section */}
+      <div className="flex-1 text-left">
+        <h2 className="text-3xl font-semibold text-gray-900">{name}</h2>
+        <p className="text-xl font-semibold text-gray-500 mt-1 tracking-wide">
+          {title}
+        </p>
+        <p className="mt-3 text-xl text-gray-400 leading-relaxed">
+          {description}
+        </p>
+      </div>
     </div>
   );
 };

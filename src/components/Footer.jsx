@@ -4,7 +4,7 @@ import { FaGithub, FaTelegramPlane, FaFacebook } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="bg-[#F5F5F5] text-gray-800 py-8 px-4">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      <div className="max-w-6xl mx-auto flex justify-around md:grid-cols-3 gap-8 text-center md:text-left ">
         
         {/* Left: Team Collaborate */}
         <div>

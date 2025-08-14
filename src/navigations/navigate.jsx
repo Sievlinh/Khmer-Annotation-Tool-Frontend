@@ -50,8 +50,8 @@ const Sidebar = () => {
               className={({ isActive }) =>
                 `flex items-center space-x-8 px-4 py-3 rounded-lg transition-all duration-200 ${
                   isActive
-                    ? "bg-[#DFEFFA] bg-opacity-25 text-[#0099FFB3] shadow-lg"
-                    : "text-blue-100 hover:bg-[#DFEFFA] hover:bg-opacity-10 hover:text-[#0099FFB3]"
+                    ? "bg-[#DFEFFA] bg-opacity-25 text-[#0099FF] shadow-lg"
+                    : "text-white hover:bg-[#DFEFFA] hover:bg-opacity-10 hover:text-[#0099FF]"
                 }`
               }
             >
