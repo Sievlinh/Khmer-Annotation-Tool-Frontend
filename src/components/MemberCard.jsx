@@ -5,7 +5,7 @@ const MemberCard = ({ image, name, title, description, contact}) => {
   return (
     <div className="flex flex-col sm:flex-row items-start bg-white px-6 py-6 gap-8 max-w-3xl">
       {/* Image section */}
-      <div className="bg-black p-1 w-56 h-56 overflow-hidden">
+      <div className="bg-black p-1 w-48 h-48 overflow-hidden">
         <img
           src={image}
           alt={name}

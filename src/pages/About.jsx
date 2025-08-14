@@ -88,68 +88,67 @@ const About = () => {
 
   return (
     <>
-      <div className="min-h-full bg-white p-6">
-        <h1 className=" text-7xl font-cadt text-[#0099FF] pl-10 pt-4 pb-4 flex justify-center">About Page</h1>
-        <h4 className="text-xl py-4  text-black pl-10 flex justify-center">We aim to accelerate Khmer OCR dataset creation with a simple, practical web tool for annotation and validation.</h4>
-        {/* Mission and Vision Section */}
-        <div className="flex-grow">
-          <MissionVision mission={mission} vision={vision} />
-        </div>
+    <div className="min-h-full bg-white p-6">
+      <h1 className=" text-5xl text-black font-bold">About Page</h1>
+      <h4 className="text-xl py-4  text-black">We aim to accelerate Khmer OCR dataset creation with a simple, practical web tool for annotation and validation.</h4>
+      {/* Mission and Vision Section */}
+      <div className="flex-grow">
+        <MissionVision mission={mission} vision={vision} />
+      </div>
 
 
-        {/* Advisors Section */}
-        <div className="mt-12">
-          {/* Team Section */}
-          <div className="bg-[#0099FF] text-white py-4 text-center rounded-md">
-            <h2 className="text-4xl font-bold mb-2">Meet Our Team</h2>
-            <h4 className="text-xl">Advisors, mentors, and members collaborating on this project</h4>
-          </div>
-          <h2 className="text-3xl font-bold mt-4">Advisors</h2>
-          {/* Cards */}
-          <div className="flex flex-wrap justify-evenly gap-8 mt-4">
-            {advisors.map((advisor, index) => (
-              <AdvisorCard
-                key={index}
-                image={advisor.image}
-                name={advisor.name}
-                title={advisor.title}
-                description={advisor.description}
-                additionalInfo={advisor.additionalInfo}
-              />
-            ))}
-          </div>
+      {/* Advisors Section */}
+      <div className="mt-12">
+        {/* Team Section */}
+        <div className="bg-[#0099FF] text-white py-4 text-center rounded-md">
+          <h2 className="text-4xl font-bold mb-2">Meet Our Team</h2>
+          <h4 className="text-xl">Advisors, mentors, and members collaborating on this project</h4>
         </div>
-        <h2 className="text-3xl font-bold">Mentor</h2>
-        {/* Mentor Section */}
-        <div className="flex justify-start gap-8 mt-4">
-          {mentor.map((mentor, index) => (
+        <h2 className="text-3xl font-bold mt-4">Advisors</h2>
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 w-full">
+          {advisors.map((advisor, index) => (
             <AdvisorCard
               key={index}
-              image={mentor.image}
-              name={mentor.name}
-              title={mentor.title}
-              description={mentor.description}
-              additionalInfo={mentor.additionalInfo}
+              image={advisor.image}
+              name={advisor.name}
+              title={advisor.title}
+              description={advisor.description}
+              additionalInfo={advisor.additionalInfo}
             />
           ))}
         </div>
-        <h2 className="text-3xl font-bold">Team Members</h2>
-        {/* Member Section */}
-        <div className="flex justify-between flex-wrap gap-8 mt-4 overflow-x-auto">
-          {members.map((member, index) => (
-            <MemberCard
-              key={index}
-              image={member.image}
-              name={member.name}
-              title={member.title}
-              description={member.description}
-              contact={member.contact}
-            />
-          ))}
-        </div>
-
       </div>
-      <Footer />
+      <h2 className="text-3xl font-bold">Mentor</h2>
+      {/* Mentor Section */}
+      <div className="flex justify-start gap-8 mt-4">
+        {mentor.map((mentor, index) => (
+          <AdvisorCard
+            key={index}
+            image={mentor.image}
+            name={mentor.name}
+            title={mentor.title}
+            description={mentor.description}
+            additionalInfo={mentor.additionalInfo}
+          />
+        ))}
+      </div>
+      <h2 className="text-3xl font-bold">Team Members</h2>
+      {/* Member Section */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 w-full">
+        {members.map((member, index) => (
+          <MemberCard
+            key={index}
+            image={member.image}
+            name={member.name}
+            title={member.title}
+            description={member.description}
+            contact={member.contact}
+          />
+        ))}
+      </div>
+    </div>
+    <Footer />
     </>
   );
 };
