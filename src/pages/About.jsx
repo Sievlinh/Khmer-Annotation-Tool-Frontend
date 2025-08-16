@@ -135,7 +135,7 @@ const About = () => {
       </div>
       <h2 className="text-3xl font-bold">Team Members</h2>
       {/* Member Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 w-full ">
         {members.map((member, index) => (
           <MemberCard
             key={index}

@@ -1,5 +1,5 @@
 import Footer from '../components/Footer'
-const Upload = () => {
+const Annotate = () => {
   
   return (
     <div className="min-h-full bg-gray-50 m-6">
@@ -12,4 +12,4 @@ const Upload = () => {
   );
 };
 
-export default Upload;
+export default Annotate;

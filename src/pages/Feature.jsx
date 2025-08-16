@@ -14,7 +14,7 @@ const SidebarItem = () => {
       <p className="mb-6 text-1xl">
         Upload your datasets Khmer or English and get detailed validation results in seconds!
       </p>
-      <a href="/upload">
+      <a href="/annotate">
       <button className="bg-white text-blue-500 font-semibold px-15 py-2 rounded shadow hover:bg-gray-100 transition">
         Start Validate Now
       </button>

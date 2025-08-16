@@ -16,9 +16,9 @@ const Sidebar = () => {
 
   const navigationItems = [
     { name: "Home", path: "/", icon: FaHome },
-    { name: "Annotate", path: "/upload", icon: MdOutlineUploadFile },
+    { name: "Annotate", path: "/annotate", icon: MdOutlineUploadFile },
     { name: "Result", path: "/result", icon: FaSortAmountUp },
-    { name: "Report", path: "/report", icon: TbReport },
+    { name: "Feature", path: "/feature", icon: TbReport },
     { name: "About", path: "/about", icon: RiErrorWarningLine },
   ];
 
