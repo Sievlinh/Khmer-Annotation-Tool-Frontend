@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./navigations/Layout";
 import Home  from "./pages/Home";
-import Annotate from "./pages/Annotate";
+import Annotate from "./pages/Upload";
 import Result from "./pages/Result";
 import Feature  from "./pages/Feature";
 import About from "./pages/About";
