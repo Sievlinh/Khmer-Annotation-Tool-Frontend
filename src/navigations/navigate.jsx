@@ -1,7 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
-// icons
 import { RiErrorWarningLine } from "react-icons/ri";
-import { TbReport } from "react-icons/tb";
+import { FaWandMagicSparkles } from "react-icons/fa6";
 import { FaSortAmountUp } from "react-icons/fa";
 import { MdOutlineUploadFile } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
@@ -12,18 +11,18 @@ const Sidebar = () => {
   const handleLogout = () => {
     // Add your logout logic here
     console.log("Logging out...");
+    
   };
 
   const navigationItems = [
     { name: "Home", path: "/", icon: FaHome },
-    { name: "Annotate", path: "/upload", icon: MdOutlineUploadFile },
+    { name: "Feature", path: "/feature", icon: FaWandMagicSparkles },
+    { name: "Annotate", path: "/annotate", icon: MdOutlineUploadFile },
     { name: "Result", path: "/result", icon: FaSortAmountUp },
-    { name: "Report", path: "/report", icon: TbReport },
     { name: "About", path: "/about", icon: RiErrorWarningLine },
   ];
-
   return (
-    <div className="w-64 bg-[#0099FFB3] text-white flex flex-col h-screen">
+    <div className="w-64 bg-blue-400 text-white flex flex-col h-screen">
       {/* Logo Section */}
       <div className="p-6 bg-white bg-opacity-20 rounded-br-3xl mb-6">
         <div className="flex items-center space-x-3">
@@ -40,7 +39,7 @@ const Sidebar = () => {
       </div>
 
       {/* Navigation Menu */}
-      <nav className="flex-1 px-4 space-y-3">
+      <nav className="flex-1 px-4 space-y-2">
         {navigationItems.map((item) => {
           const Icon = item.icon;
           return (
@@ -48,7 +47,7 @@ const Sidebar = () => {
               key={item.name}
               to={item.path}
               className={({ isActive }) =>
-                `flex items-center space-x-8 px-4 py-3 rounded-lg transition-all duration-200 ${
+                `flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                   isActive
                     ? "bg-[#DFEFFA] bg-opacity-25 text-[#0099FF] shadow-lg"
                     : "text-white hover:bg-[#DFEFFA] hover:bg-opacity-10 hover:text-[#0099FF]"
@@ -66,7 +65,7 @@ const Sidebar = () => {
       <div className="p-4 border-t border-blue-300 border-opacity-30">
         <button
           onClick={handleLogout}
-          className="flex items-center space-x-8 w-full px-4 py-3 hover:bg-[#DFEFFA] hover:bg-opacity-10 hover:text-[#0099FFB3] rounded-lg"
+          className="flex items-center space-x-3 w-full px-4 py-3 hover:bg-white hover:bg-opacity-10 hover:text-blue-500 rounded-lg"
         >
           <TbLogout2 className="w-6 h-6" />
           <span className="font-medium">Log Out</span>
