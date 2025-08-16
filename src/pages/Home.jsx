@@ -217,7 +217,7 @@ export const Home = () => {
           <div className="flex gap-4 mt-20">
             {/* Upload Button */}
             <a
-              href="/upload"
+              href="/annotate"
               className="bg-blue-400 hover:bg-blue-500 text-white px-10 py-2 rounded flex items-center gap-2"
             >
               {" "}
