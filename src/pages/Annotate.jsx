@@ -23,12 +23,11 @@ import {
 import { JsonEditor } from "@/components/json-editor";
 import { AnnotationList } from "@/components/annotation-list";
 import { AnnotationCanvas } from "@/components/annotation-canvas";
-import { levenshteinSimilarity } from "@/lib/levenshtein"
+import { levenshteinSimilarity } from "@/lib/levenshtein";
 import { OcrControls } from "@/components/ocr-controls";
-import { saveProject, loadProject, clearProject } from "@/lib/storage"
-import { ExportDialog } from "@/components/export-dialog"
+import { saveProject, loadProject, clearProject } from "@/lib/storage";
+import { ExportDialog } from "@/components/export-dialog";
 
-<<<<<<< HEAD:src/pages/Annotate.jsx
 // import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const Annotate = () => {
   const [mode, setMode] = React.useState("box"); // 'box' | 'polygon'
@@ -37,25 +36,19 @@ const Annotate = () => {
   const [annotations, setAnnotations] = React.useState({}); // { imageId: [ {id, type, points|rect, text, gt, accuracy, label} ] }
   const [activeTab, setActiveTab] = React.useState("detected");
   const [lang, setLang] = React.useState("khm"); // OCR language
-=======
-const Upload = () => {
-  const [mode, setMode] = React.useState("box");
-  const [currentId, setCurrentId] = React.useState(null);
-  const [images, setImages] = React.useState([]);
-  const [annotations, setAnnotations] = React.useState({});
-  const [activeTab, setActiveTab] = React.useState("annotation");
-  const [lang, setLang] = React.useState("khm");
-  const [fullOcr, setFullOcr] = React.useState(null);
-  const [exportOpen, setExportOpen] = React.useState(false)
->>>>>>> 788840251677c07b0a578dbc2bf14fd609336053:src/pages/Upload.jsx
+  const [exportOpen, setExportOpen] = React.useState(false);
 
   const currentImage = images.find((i) => i.id === currentId);
-  const [batchInfo, setBatchInfo] = React.useState({ running: false, current: 0, total: 0, pct: 0 });
+  const [batchInfo, setBatchInfo] = React.useState({
+    running: false,
+    current: 0,
+    total: 0,
+    pct: 0,
+  });
 
   React.useEffect(() => {
-<<<<<<< HEAD:src/pages/Annotate.jsx
     // Fetch annotations when the component mounts
-    console.log(images)
+    console.log(images);
   }, [annotations, currentId, images]);
 
   // const fetchAnnotations = async () => {
@@ -79,10 +72,9 @@ const Upload = () => {
   //     console.error("Failed to fetch annotations:", error);
   //   }
   // };
-=======
-    saveProject({ images, annotations, currentId, lang })
-  }, [images, annotations, currentId, lang])
->>>>>>> 788840251677c07b0a578dbc2bf14fd609336053:src/pages/Upload.jsx
+  React.useEffect(() => {
+    saveProject({ images, annotations, currentId, lang });
+  }, [images, annotations, currentId, lang]);
 
   const handleFiles = async (items) => {
     const updated = [...images, ...items];
@@ -93,12 +85,12 @@ const Upload = () => {
   };
 
   const onClearAll = () => {
-      setImages([])
-      setAnnotations({})
-      setCurrentId(null)
-      setFullOcr({ text: "", conf: null })
-      clearProject()
-  }
+    setImages([]);
+    setAnnotations({});
+    setCurrentId(null);
+    setFullOcr({ text: "", conf: null });
+    clearProject();
+  };
 
   const prevImage = () => {
     if (!images.length || currentId == null) return;
@@ -176,13 +168,11 @@ const Upload = () => {
     <div className="min-h-full bg-gray-50 m-6">
       <h1 className="text-3xl font-bold">Annotate</h1>
       <div className="bg-[#E5E9EC] px-2 py-1 my-3 rounded inline-block w-fit">
-            <h4 className="text-sm font-semibold">
-              Tip: Use keyboard shortcuts
-            </h4>
-          </div>
+        <h4 className="text-sm font-semibold">Tip: Use keyboard shortcuts</h4>
+      </div>
 
       {/* REVISED: This grid now adapts for different screen sizes */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {/* Upload images to annotate them. You can use the following keyboard shortcuts: */}
         <div>
           <Card>
@@ -266,90 +256,93 @@ const Upload = () => {
         {/* REVISED: This section now spans all columns on small screens, and fewer on larger screens */}
         <div className="col-span-1 md:col-span-1 lg:col-span-3">
           <Card className="overflow-hidden">
-                <CardHeader className="pb-3 flex items-center justify-between">
-                  <CardTitle className="text-base">Annotation Canvas</CardTitle>
-                  <div className="flex items-center gap-2">
-                    <OcrControls lang={lang} setLang={setLang} image={currentImage} onOcrResult={(res) => setFullOcr(res)} />
-                    <Button
-                      variant={mode === "box" ? "default" : "outline"}
-                      className={
-                        mode === "box" ? "bg-blue-500 hover:bg-blue-600" : ""
-                      }
-                      onClick={() => setMode("box")}
-                    >
-                      <SquareDashedMousePointer className="w-4 h-4" />
-                      {/* Box */}
-                    </Button>
-                    <Button
-                      variant={mode === "polygon" ? "default" : "outline"}
-                      className={
-                        mode === "polygon"
-                          ? "bg-blue-500 hover:bg-blue-600"
-                          : ""
-                      }
-                      onClick={() => setMode("polygon")}
-                    >
-                      <PenTool className="w-4 h-4" />
-                      {/* Polygon */}
-                    </Button>
-                    <Button
-                      variant={mode === "edit" ? "default" : "outline"}
-                      className={
-                        mode === "edit" ? "bg-blue-500 hover:bg-blue-600" : ""
-                      }
-                      onClick={() => setMode("edit")}
-                    >
-                      <PenTool className="w-4 h-4" />
-                      edit
-                    </Button>
-                    <Button
-                      id="btn-ocr-entire"
-                      variant="outline"
-                      size="sm"
-                      // onClick={() =>
-                      //   document.getElementById("btn-ocr-entire-real")?.click()
-                      // }
-                      // disabled={!currentImage}
-                    >
-                      <ScanText className="w-4 h-4 mr-2" />
-                      OCR Entire
-                    </Button>
-                    <Button variant="outline" onClick={() => setExportOpen(true)}>
-            <Download className="w-4 h-4 mr-2" />
-            Export
-          </Button>
-          <Button variant="ghost" onClick={onClearAll}>
-            <Trash2 className="w-4 h-4 mr-2" />
-            ClearAll
-          </Button>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  {currentImage ? (
-                    <AnnotationCanvas
-                      image={currentImage}
-                      mode={mode}
-                      annotations={annotations[currentId] || []}
-                      onAddAnnotation={(ann) => {
-                        setAnnotations((prev) => {
-                          const list = prev[currentId]
-                            ? [...prev[currentId], ann]
-                            : [ann];
-                          return { ...prev, [currentId]: list };
-                        });
-                      }}
-                      onUpdateAnnotation={updateAnnotation} // uses your patch logic
-                    />
-                  ) : (
-                    <div className="h-[500px] flex items-center justify-center text-gray-500">
-                      canvasEmpty
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
+            <CardHeader className="pb-3 flex items-center justify-between">
+              <CardTitle className="text-base">Annotation Canvas</CardTitle>
+              <div className="flex items-center gap-2">
+                <OcrControls
+                  lang={lang}
+                  setLang={setLang}
+                  image={currentImage}
+                  onOcrResult={(res) => setFullOcr(res)}
+                />
+                <Button
+                  variant={mode === "box" ? "default" : "outline"}
+                  className={
+                    mode === "box" ? "bg-blue-500 hover:bg-blue-600" : ""
+                  }
+                  onClick={() => setMode("box")}
+                >
+                  <SquareDashedMousePointer className="w-4 h-4" />
+                  {/* Box */}
+                </Button>
+                <Button
+                  variant={mode === "polygon" ? "default" : "outline"}
+                  className={
+                    mode === "polygon" ? "bg-blue-500 hover:bg-blue-600" : ""
+                  }
+                  onClick={() => setMode("polygon")}
+                >
+                  <PenTool className="w-4 h-4" />
+                  {/* Polygon */}
+                </Button>
+                <Button
+                  variant={mode === "edit" ? "default" : "outline"}
+                  className={
+                    mode === "edit" ? "bg-blue-500 hover:bg-blue-600" : ""
+                  }
+                  onClick={() => setMode("edit")}
+                >
+                  <PenTool className="w-4 h-4" />
+                  edit
+                </Button>
+                <Button
+                  id="btn-ocr-entire"
+                  variant="outline"
+                  size="sm"
+                  // onClick={() =>
+                  //   document.getElementById("btn-ocr-entire-real")?.click()
+                  // }
+                  // disabled={!currentImage}
+                >
+                  <ScanText className="w-4 h-4 mr-2" />
+                  OCR Entire
+                </Button>
+                <Button variant="outline" onClick={() => setExportOpen(true)}>
+                  <Download className="w-4 h-4 mr-2" />
+                  Export
+                </Button>
+                <Button variant="ghost" onClick={onClearAll}>
+                  <Trash2 className="w-4 h-4 mr-2" />
+                  ClearAll
+                </Button>
+              </div>
+            </CardHeader>
+            <CardContent>
+              {currentImage ? (
+                <AnnotationCanvas
+                  image={currentImage}
+                  mode={mode}
+                  annotations={annotations[currentId] || []}
+                  onAddAnnotation={(ann) => {
+                    setAnnotations((prev) => {
+                      const list = prev[currentId]
+                        ? [...prev[currentId], ann]
+                        : [ann];
+                      return { ...prev, [currentId]: list };
+                    });
+                  }}
+                  onUpdateAnnotation={updateAnnotation} // uses your patch logic
+                />
+              ) : (
+                <div className="h-[500px] flex items-center justify-center text-gray-500">
+                  canvasEmpty
+                </div>
+              )}
+            </CardContent>
+          </Card>
         </div>
         {/* REVISED: This section now spans all columns on all screen sizes to take up full width */}
-        <div className = "col-span-1 md:col-span-2 lg:col-span-4" >
+        <div className="col-span-1 md:col-span-2 lg:col-span-4">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger
@@ -378,8 +371,7 @@ const Upload = () => {
               />
             </TabsContent>
 
-            <TabsContent value="detected" className="mt-4">
-            </TabsContent>
+            <TabsContent value="detected" className="mt-4"></TabsContent>
 
             <TabsContent value="json" className="mt-4">
               <JsonEditor
@@ -392,9 +384,7 @@ const Upload = () => {
           </Tabs>
         </div>
       </div>
-<<<<<<< HEAD:src/pages/Annotate.jsx
-      <Footer />
-=======
+      <Footer/>
       <ExportDialog
         open={exportOpen}
         onOpenChange={setExportOpen}
@@ -402,13 +392,8 @@ const Upload = () => {
         annotations={annotations}
         projectMeta={{ name: "Khmer Data Annotation Tool", lang }}
       />
->>>>>>> 788840251677c07b0a578dbc2bf14fd609336053:src/pages/Upload.jsx
     </div>
   );
 };
 
-<<<<<<< HEAD:src/pages/Annotate.jsx
 export default Annotate;
-=======
-export default Upload;
->>>>>>> 788840251677c07b0a578dbc2bf14fd609336053:src/pages/Upload.jsx

@@ -43,11 +43,11 @@ export function ExportDialog({ open, onOpenChange, images, annotations, projectM
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md bg-white">
         <DialogHeader>
-          <DialogTitle>{t("export.title")}</DialogTitle>
+          <DialogTitle>{t("Title")}</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
           <div>
-  <Label className="text-xs text-gray-600">{t("export.format")}</Label>
+  <Label className="text-xs text-gray-600">{t("Format")}</Label>
   <RadioGroup
     value={format}
     onValueChange={setFormat}
@@ -60,7 +60,7 @@ export function ExportDialog({ open, onOpenChange, images, annotations, projectM
       />{" "}
       JSON
     </label>
-    <label className="flex items-center gap-2 border rounded-md p-2">
+    {/* <label className="flex items-center gap-2 border rounded-md p-2">
       <RadioGroupItem
         value="coco"
         className="text-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
@@ -73,7 +73,7 @@ export function ExportDialog({ open, onOpenChange, images, annotations, projectM
         className="text-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
       />{" "}
       JSONL
-    </label>
+    </label> */}
     <label className="flex items-center gap-2 border rounded-md p-2">
       <RadioGroupItem
         value="yolo"
@@ -86,10 +86,10 @@ export function ExportDialog({ open, onOpenChange, images, annotations, projectM
 
           <div className="flex items-center gap-2">
             <Checkbox id="includeText" checked={includeText} onCheckedChange={(v) => setIncludeText(!!v)} />
-            <label htmlFor="includeText" className="text-sm">{t("export.includeText")}</label>
+            <label htmlFor="includeText" className="text-sm">{t("Include Text")}</label>
           </div>
           <div className="flex justify-end">
-            <Button onClick={onExport}>{t("export.download")}</Button>
+            <Button onClick={onExport}>{t("Download")}</Button>
           </div>
         </div>
       </DialogContent>

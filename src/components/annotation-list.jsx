@@ -74,7 +74,7 @@ export function AnnotationList({
   return (
     <Card>
       <CardHeader className="pb-3 flex flex-row items-center justify-between">
-        <CardTitle className="text-base">{t("annotate.listTitle")}</CardTitle>
+        <CardTitle className="text-base">Annotations</CardTitle>
         <div className="flex items-center gap-2">
           {busy && (
             <>
@@ -96,25 +96,25 @@ export function AnnotationList({
             disabled={!annotations.length || busy}
           >
             <Play className="w-4 h-4 mr-2" />
-            {t("annotate.runOcr")}
+            {t("Run Ocr")}
           </Button>
         </div>
       </CardHeader>
       <CardContent className="space-y-4 overflow-y-auto max-h-[500px]">
         {(!annotations || annotations.length === 0) && (
-          <p className="text-sm text-gray-500">{t("annotate.none")}</p>
+          <p className="text-sm text-gray-500">{t("None")}</p>
         )}
         {annotations.map((a, idx) => (
           <div key={a.id} className="p-3 rounded-md border">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between"> 
               <div className="text-sm text-gray-700">
-                {a.type === "box" ? t("annotate.box") : t("annotate.polygon")} #
+                {a.type === "box" ? t("Box") : t("Polygon")} #
                 {idx + 1}
               </div>
               <div className="flex items-center gap-2">
                 {typeof a.accuracy === "number" && (
                   <Badge variant="secondary">
-                    {t("annotate.accuracy")}: {(a.accuracy * 100).toFixed(1)}%
+                    {t("Accuracy")}: {(a.accuracy * 100).toFixed(1)}%
                   </Badge>
                 )}
                 <Button
@@ -124,13 +124,13 @@ export function AnnotationList({
                   disabled={busy}
                 >
                   <Play className="w-4 h-4 mr-2" />
-                  {t("annotate.runOcr")}
+                  {t("RunOcr")}
                 </Button>
                 <Button
                   variant="destructive"
                   size="icon"
                   onClick={() => onDelete(a.id)}
-                  aria-label={t("annotate.delete")}
+                  aria-label={t("Delete")}
                   className={" bg-red-600 hover:bg-red-700"}
                 >
                   <Trash2 className="w-4 h-4" />
@@ -141,7 +141,7 @@ export function AnnotationList({
             <div className="mt-3 grid md:grid-cols-3 gap-3">
               <div>
                 <label className="text-xs text-gray-600 block mb-1">
-                  {t("annotate.label")}
+                  {t("Label")}
                 </label>
                 <Input
                   value={a.label || ""}
@@ -151,7 +151,7 @@ export function AnnotationList({
               </div>
               <div className="md:col-span-2">
                 <label className="text-xs text-gray-600 block mb-1">
-                  {t("annotate.extracted")}
+                  {t("Extracted")}
                 </label>
                 <Textarea
                   value={a.text || ""}
@@ -164,7 +164,7 @@ export function AnnotationList({
             <div className="mt-3 grid md:grid-cols-3 gap-3">
               <div className="md:col-span-3">
                 <label className="text-xs text-gray-600 block mb-1">
-                  {t("annotate.groundTruth")}
+                  {t("Ground Truth")}
                 </label>
                 <Textarea
                   value={a.gt || ""}
