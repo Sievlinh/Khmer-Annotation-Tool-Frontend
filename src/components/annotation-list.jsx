@@ -74,7 +74,7 @@ export function AnnotationList({
   return (
     <Card>
       <CardHeader className="pb-3 flex flex-row items-center justify-between">
-        <CardTitle className="text-base">{t("annotate.listTitle")}</CardTitle>
+        <CardTitle className="text-base">Visual Editor</CardTitle>
         <div className="flex items-center gap-2">
           {busy && (
             <>
