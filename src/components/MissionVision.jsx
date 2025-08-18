@@ -14,19 +14,19 @@ const vision = {
 
 const MissionVision = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="w-full max-w-5xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
       {[mission, vision].map((item, idx) => (
         <div
           key={idx}
-          className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition duration-300"
+          className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition duration-300 border-b-4 border-t-4 border-[#ff3f34]"
         >
           <img
             src={item.image}
             alt={item.title}
-            className="w-full h-72 object-contain mb-4"
+            className="w-full h-64 object-contain mb-4"
           />
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">{item.title}</h2>
-          <p className="text-gray-600 text-xl">{item.text}</p>
+          <h2 className="text-3xl font-bold text-[#12284c] mb-2">{item.title}</h2>
+          <p className="text-[#12284c] text-xl">{item.text}</p>
         </div>
       ))}
     </div>

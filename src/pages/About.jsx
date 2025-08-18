@@ -2,6 +2,12 @@ import Footer from '../components/Footer';
 import MissionVision from '../components/MissionVision';
 import AdvisorCard from '../components/AdvisorCard';
 import MemberCard from '../components/MemberCard';
+import Punleu from '../assets/profiles/PunleuTY.jpg';
+import Sievlinh from '../assets/profiles/SievlinhKHEAN.png';
+import Jessica from '../assets/profiles/JessicaKIM.jpg';
+import Mengeang from '../assets/profiles/MengeangENG.jpg';
+import Lyheng from '../assets/profiles/LyhengTouch.png';
+import Yanghai from '../assets/profiles/YanghaiPOV.jpg';
 const About = () => {
   // Define mission and vision here
   const mission = "Enable students and researchers to build high-quality Khmer OCR datasets efficiently through intuitive annotation, and easy validation.";
@@ -36,7 +42,7 @@ const About = () => {
   ];
   const members = [
     {
-      image: 'https://i.pinimg.com/736x/f3/64/59/f3645902b98fdf0a2b52633cd8ed2de1.jpg',
+      image: Punleu,
       name: 'Punleu TY',
       title: 'Data Engineer',
       description: 'Guides the team with AI expertise and research insight.',
@@ -49,19 +55,19 @@ const About = () => {
       description: 'Guides the team with AI expertise and research insight.',
     },
     {
-      image: 'https://i.pinimg.com/1200x/db/c4/3e/dbc43ef30d7c84d4591435014ff1475a.jpg',
+      image: Mengeang,
       name: 'Mengeang ENG',
       title: 'Data Engineer',
       description: 'Guides the team with AI expertise and research insight.',
     },
     {
-      image: 'https://i.pinimg.com/736x/de/42/16/de4216857d7cb3615eac88b93d589a7b.jpg',
+      image: Sievlinh,
       name: 'Sievlinh KHEAN',
       title: 'Frontend Dev',
       description: 'Guides the team with AI expertise and research insight.',
     },
     {
-      image: 'https://i.pinimg.com/736x/10/8a/f6/108af628e1c73702d41d7477b1ca37e6.jpg',
+      image: Jessica,
       name: 'Jessica KIM',
       title: 'Frontend Dev',
       description: 'Guides the team with AI expertise and research insight.',
@@ -73,13 +79,13 @@ const About = () => {
       description: 'Guides the team with AI expertise and research insight.',
     },
     {
-      image: 'https://i.pinimg.com/1200x/ba/a4/9c/baa49c78a275f1ef12aa5a6e17fe3cd1.jpg',
+      image: Yanghai,
       name: 'Yanghai POV',
       title: 'Backend Dev',
       description: 'Guides the team with AI expertise and research insight.',
     },
     {
-      image: 'https://i.pinimg.com/736x/36/9e/6a/369e6a921eb028adc697a81dbb3467f4.jpg',
+      image: Lyheng,
       name: 'Lyheng Touch',
       title: 'Backend Dev',
       description: 'Guides the team with AI expertise and research insight.',
@@ -89,8 +95,8 @@ const About = () => {
   return (
     <>
     <div className="min-h-full bg-white p-6">
-      <h1 className=" text-5xl text-black font-bold">About Page</h1>
-      <h4 className="text-xl py-4  text-black">We aim to accelerate Khmer OCR dataset creation with a simple, practical web tool for annotation and validation.</h4>
+      <h1 className=" text-5xl text-[#ff3f34] font-cadt">About Page</h1>
+      <h4 className="text-xl py-4  text-[#12284c] ">We aim to accelerate Khmer OCR dataset creation with a simple, practical web tool for annotation and validation.</h4>
       {/* Mission and Vision Section */}
       <div className="flex-grow">
         <MissionVision mission={mission} vision={vision} />
@@ -100,7 +106,7 @@ const About = () => {
       {/* Advisors Section */}
       <div className="mt-12">
         {/* Team Section */}
-        <div className="bg-[#0099FF] text-white py-4 text-center rounded-md">
+        <div className="bg-[#ff3f34] text-white py-4 text-center rounded-md">
           <h2 className="text-4xl font-bold mb-2">Meet Our Team</h2>
           <h4 className="text-xl">Advisors, mentors, and members collaborating on this project</h4>
         </div>
@@ -121,7 +127,7 @@ const About = () => {
       </div>
       <h2 className="text-3xl font-bold">Mentor</h2>
       {/* Mentor Section */}
-      <div className="flex justify-start gap-8 mt-4">
+      <div className="flex justify-start gap-8 mt-4 ">
         {mentor.map((mentor, index) => (
           <AdvisorCard
             key={index}
