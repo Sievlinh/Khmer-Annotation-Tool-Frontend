@@ -23,22 +23,6 @@ const Sidebar = () => {
   ];
   return (
     <div className="w-56 text-white flex flex-col h-screen ">
-      {/* Logo Section */}
-      {/* <div className="p-6 bg-[#ff3f34] bg-opacity-20  mb-6">
-        <div className="flex items-center space-x-3">
-          <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-            <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-              <span className="text-white text-sm font-bold">BL</span>
-            </div>
-          </div>
-          <div>
-            <h1 className="text-xl font-bold text-white">Bread Lady</h1>
-            <p className="text-blue-100 text-sm">Data Tool</p>
-          </div>
-        </div>
-      </div> */}
-
-      {/* Logo Section */}
       <div className="p-6 bg-white bg-opacity-20 mb-6 flex items-center justify-center">
         <img
           src= {Logo}

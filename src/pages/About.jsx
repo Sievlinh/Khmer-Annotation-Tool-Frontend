@@ -51,57 +51,64 @@ const About = () => {
       name: 'Punleu TY',
       title: 'Data Engineer',
       description: 'Guides the team with AI expertise and research insight.',
-      // contact: 'punleu.ty@student.cadt.edu.kh',
+      contact: 'punleu.ty@student.cadt.edu.kh',
     },
     {
       image: Sitharath,
       name: 'Sitharath SREY',
       title: 'Data Engineer',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'sitharath.srey@student.cadt.edu.kh',
     },
     {
       image: Mengeang,
       name: 'Mengeang ENG',
       title: 'Data Engineer',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'mengeang.eng@student.cadt.edu.kh',
     },
     {
       image: Sievlinh,
       name: 'Sievlinh KHEAN',
       title: 'Frontend Dev',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'sievlinh.khean@student.cadt.edu.kh',
     },
     {
       image: Jessica,
       name: 'Jessica KIM',
       title: 'Frontend Dev',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'jessica.kim@student.cadt.edu.kh',
     },
     {
       image: Seila,
       name: 'Seila MANH',
       title: 'Backend Dev',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'seila.manh@student.cadt.edu.kh',
     },
     {
       image: Yanghai,
       name: 'Yanghai POV',
       title: 'Backend Dev',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'yanghai.pov@student.cadt.edu.kh',
     },
     {
       image: Lyheng,
       name: 'Lyheng Touch',
       title: 'Backend Dev',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'lyheng.touch@student.cadt.edu.kh',
     },
   ];
 
   return (
     <>
     <div className="min-h-full bg-white p-6">
-      <h1 className=" text-5xl text-[#ff3f34] font-cadt">About Page</h1>
-      <h4 className="text-xl py-4  text-[#12284c] ">We aim to accelerate Khmer OCR dataset creation with a simple, practical web tool for annotation and validation.</h4>
+      <h1 className=" text-5xl text-[#ff3f34] font-cadt flex justify-center">About Page</h1>
+      <h4 className="text-xl py-4  text-[#12284c] flex justify-center">We aim to accelerate Khmer OCR dataset creation with a simple, practical web tool for annotation and validation.</h4>
       {/* Mission and Vision Section */}
       <div className="flex-grow">
         <MissionVision mission={mission} vision={vision} />
