@@ -22,7 +22,7 @@ const Sidebar = () => {
     { name: "About", path: "/about", icon: RiErrorWarningLine },
   ];
   return (
-    <div className="w-56 text-white flex flex-col h-screen">
+    <div className="w-56 text-white flex flex-col h-screen ">
       {/* Logo Section */}
       {/* <div className="p-6 bg-[#ff3f34] bg-opacity-20  mb-6">
         <div className="flex items-center space-x-3">
