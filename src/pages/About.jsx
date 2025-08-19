@@ -8,6 +8,10 @@ import Jessica from '../assets/profiles/JessicaKIM.jpg';
 import Mengeang from '../assets/profiles/MengeangENG.jpg';
 import Lyheng from '../assets/profiles/LyhengTouch.png';
 import Yanghai from '../assets/profiles/YanghaiPOV.jpg';
+import Sitharath from '../assets/profiles/SitharathSREY.jpg';
+import Seila from '../assets/profiles/SeilaMANH.jpg';
+import Soklong from '../assets/profiles/SoklongHIM.jpg';
+import Hongly from '../assets/profiles/HonglyVA.jpg';
 const About = () => {
   // Define mission and vision here
   const mission = "Enable students and researchers to build high-quality Khmer OCR datasets efficiently through intuitive annotation, and easy validation.";
@@ -16,14 +20,14 @@ const About = () => {
   // Advisors data
   const advisors = [
     {
-      image: 'https://scontent.fpnh11-1.fna.fbcdn.net/v/t39.30808-6/492204630_9432955086803710_5436869514268804733_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeHdI9zOrz73UUc8dMd7NZz7HG6PSOobcvQcbo9I6hty9CMoc-7kzYxcyC-25kplgZp16_Wfa8F_4Lt5WJbzc-vX&_nc_ohc=31XgPV1i6y0Q7kNvwEALfgN&_nc_oc=Adnk0Vfp9wUkSjzDRahIM_3cvgUQUAx7bJ4iPwM7BsF9OVmHkcTeOAi5ZEkQT-Egndo&_nc_zt=23&_nc_ht=scontent.fpnh11-1.fna&_nc_gid=1M7WnFc6Y4naQMa1eh3Nfw&oh=00_AfWCBLT1WlfWCDD3NYqjRUHmcXVfZ9sZuEwxGBzXA53qAQ&oe=689FE122', // Replace with actual image link
+      image: Hongly, // Replace with actual image link
       name: 'Dr. Hongly VA',
       title: 'Boost annotation speed to 50x',
       description: 'Expert in AI and machine learning and coding.',
       additionalInfo: 'PhD in Computer Science.',
     },
     {
-      image: 'https://scontent.fpnh11-2.fna.fbcdn.net/v/t1.6435-9/84673205_2539677656307771_5991631041805156352_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHPR4k3TAv4XQfNEDznm2MS-mZ9HD-Uthv6Zn0cP5S2G02emZJUAFycxe3hU8XEOfYIR0CpVVsVWVNu2l8ehy3L&_nc_ohc=yJQPDjqJ3tkQ7kNvwFdXOgF&_nc_oc=AdkByh5Z-UiJazhWhfxbnAvSs-VI9mjl7934Se8WfzldTCjiIz1ZeiiEsfint5wn8vk&_nc_zt=23&_nc_ht=scontent.fpnh11-2.fna&_nc_gid=6KvtHpnMTDSSTRYqVvw6BQ&oh=00_AfUuExFIpKrp5MjtVUsA-AgOy496O2KJyyaG4S33IMYGvg&oe=68C1811E', // Replace with actual image link
+      image: Soklong, // Replace with actual image link
       name: 'Mr. Soklong HIM',
       title: 'Lecturer and Researcher',
       description: 'Lecturer and researcher in deep learning.',
@@ -49,7 +53,7 @@ const About = () => {
       // contact: 'punleu.ty@student.cadt.edu.kh',
     },
     {
-      image: 'https://i.pinimg.com/736x/3c/62/87/3c62871624085189125ababe64f4fac6.jpg',
+      image: Sitharath,
       name: 'Sitharath SREY',
       title: 'Data Engineer',
       description: 'Guides the team with AI expertise and research insight.',
@@ -73,7 +77,7 @@ const About = () => {
       description: 'Guides the team with AI expertise and research insight.',
     },
     {
-      image: 'https://i.pinimg.com/736x/12/f7/b6/12f7b6569065791d75149d302dd9bb92.jpg',
+      image: Seila,
       name: 'Seila MANH',
       title: 'Backend Dev',
       description: 'Guides the team with AI expertise and research insight.',
