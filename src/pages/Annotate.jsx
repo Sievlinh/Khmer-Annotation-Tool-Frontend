@@ -165,8 +165,8 @@ const Annotate = () => {
   };
 
   return (
-    <div className="min-h-full bg-gray-50 m-6">
-      <h1 className="text-3xl font-bold">Annotate</h1>
+    <div className="min-h-full bg-gray-50 p-6">
+      <h1 className="text-5xl text-[#ff3f34] font-cadt pb-5">Annotate</h1>
       <div className="bg-[#E5E9EC] px-2 py-1 my-3 rounded inline-block w-fit">
         <h4 className="text-sm font-semibold">Tip: Use keyboard shortcuts</h4>
       </div>
@@ -175,14 +175,14 @@ const Annotate = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {/* Upload images to annotate them. You can use the following keyboard shortcuts: */}
         <div>
-          <Card>
+          <Card className={"bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 border-b-4 border-t-4 border-[#ff3f34]"}>
             <CardHeader className="pb-3">
               <CardTitle className="text-base flex items-center gap-2">
-                <ImagePlus className="w-4 h-4 text-blue-500" />
+                <ImagePlus className="w-4 h-4" />
                 Upload Images
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent >
               <ImageUploader onFiles={handleFiles} />
               <div className="mt-4">
                 <Label className="text-xs text-gray-600">Dataset</Label>
@@ -197,7 +197,7 @@ const Annotate = () => {
                       key={img.id}
                       className={`w-full text-left p-2 text-sm hover:bg-blue-50 ${
                         img.id === currentId
-                          ? "bg-blue-50 border-l-4 border-blue-500"
+                          ? "bg-blue-50 border-l-4 border-[#ff3f34]"
                           : ""
                       }`}
                       onClick={() => setCurrentId(img.id)}
@@ -255,7 +255,7 @@ const Annotate = () => {
         {/* Anotation Canvas */}
         {/* REVISED: This section now spans all columns on small screens, and fewer on larger screens */}
         <div className="col-span-1 md:col-span-1 lg:col-span-3">
-          <Card className="overflow-hidden">
+          <Card className="overflow-hidden bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 border-b-4 border-t-4 border-[#ff3f34]">
             <CardHeader className="pb-3 flex items-center justify-between">
               <CardTitle className="text-base">Annotation Canvas</CardTitle>
               <div className="flex items-center gap-2">
@@ -268,7 +268,7 @@ const Annotate = () => {
                 <Button
                   variant={mode === "box" ? "default" : "outline"}
                   className={
-                    mode === "box" ? "bg-blue-500 hover:bg-blue-600" : ""
+                    mode === "box" ? "bg-[#ff3f34] text-white hover:bg-[#ff3e34dc] " : ""
                   }
                   onClick={() => setMode("box")}
                 >
@@ -278,7 +278,7 @@ const Annotate = () => {
                 <Button
                   variant={mode === "polygon" ? "default" : "outline"}
                   className={
-                    mode === "polygon" ? "bg-blue-500 hover:bg-blue-600" : ""
+                    mode === "polygon" ? "bg-[#ff3f34] text-white hover:bg-[#ff3e34dc]" : ""
                   }
                   onClick={() => setMode("polygon")}
                 >
@@ -288,7 +288,7 @@ const Annotate = () => {
                 <Button
                   variant={mode === "edit" ? "default" : "outline"}
                   className={
-                    mode === "edit" ? "bg-blue-500 hover:bg-blue-600" : ""
+                    mode === "edit" ? "bg-[#ff3f34] text-white hover:bg-[#ff3e34dc] " : ""
                   }
                   onClick={() => setMode("edit")}
                 >
@@ -307,11 +307,11 @@ const Annotate = () => {
                   <ScanText className="w-4 h-4 mr-2" />
                   OCR Entire
                 </Button>
-                <Button variant="outline" onClick={() => setExportOpen(true)}>
+                <Button variant="outline" onClick={() => setExportOpen(true)} className={"bg-[#ff3f34] text-white hover:bg-[#ff3e34b2] "}>
                   <Download className="w-4 h-4 mr-2" />
                   Export
                 </Button>
-                <Button variant="ghost" onClick={onClearAll}>
+                <Button variant="ghost" onClick={onClearAll} className={"bg-[#ff3f34] text-white hover:bg-[#ff3e34b2] "}>
                   <Trash2 className="w-4 h-4 mr-2" />
                   ClearAll
                 </Button>
@@ -357,7 +357,7 @@ const Annotate = () => {
                 Json Editor
               </TabsTrigger>
             </TabsList>
-            <TabsContent value="annotation" className="">
+            <TabsContent value="annotation">
               <AnnotationList
                 image={currentImage}
                 annotations={annotations[currentId] || []}
@@ -373,7 +373,7 @@ const Annotate = () => {
 
             <TabsContent value="detected" className="mt-4"></TabsContent>
 
-            <TabsContent value="json" className="mt-4">
+            <TabsContent value="json" className="mt-4 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 border-b-4 border-t-4 border-[#ff3f34]">
               <JsonEditor
                 images={images}
                 annotations={annotations}
