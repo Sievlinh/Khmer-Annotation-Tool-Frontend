@@ -5,7 +5,7 @@ const AdvisorCard = ({ image, name, title, description, additionalInfo }) => {
   return (
     <div className="flex flex-col sm:flex-row items-center bg-white px-6 py-6 gap-6 max-w-3xl">
       {/* Image section */}
-      <div className="bg-blue-100 p-1 w-64 h-64 overflow-hidden">
+      <div className="bg-blue-100 p-1 w-48 h-48 overflow-hidden">
         <img
           src={image}
           alt={name}

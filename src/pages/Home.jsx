@@ -218,7 +218,7 @@ export const Home = () => {
             {/* Upload Button */}
             <a
               href="/annotate"
-              className="bg-blue-400 hover:bg-blue-500 text-white px-10 py-2 rounded flex items-center gap-2"
+              className="bg-[#ff3f34] text-white px-10 py-2 rounded flex items-center gap-2"
             >
               {" "}
               Get Started <FaArrowRightLong />{" "}
@@ -226,7 +226,7 @@ export const Home = () => {
 
             {/* Scroll Button */}
             <a
-              href="#"
+              href="#instructions"
               className="border border-gray-300 px-10 py-2 bg-blue-100 rounded flex items-center gap-2"
             >
               {" "}
