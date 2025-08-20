@@ -34,7 +34,7 @@ const Annotate = () => {
   const [currentId, setCurrentId] = React.useState(null);
   const [images, setImages] = React.useState([]); // [{id, name, url(dataURL), width, height}]
   const [annotations, setAnnotations] = React.useState({}); // { imageId: [ {id, type, points|rect, text, gt, accuracy, label} ] }
-  const [activeTab, setActiveTab] = React.useState("detected");
+  const [activeTab, setActiveTab] = React.useState("annotation");
   const [lang, setLang] = React.useState("khm"); // OCR language
   const [exportOpen, setExportOpen] = React.useState(false);
 
@@ -299,6 +299,7 @@ const Annotate = () => {
                   id="btn-ocr-entire"
                   variant="outline"
                   size="sm"
+
                   // onClick={() =>
                   //   document.getElementById("btn-ocr-entire-real")?.click()
                   // }
@@ -371,7 +372,8 @@ const Annotate = () => {
               />
             </TabsContent>
 
-            <TabsContent value="detected" className="mt-4"></TabsContent>
+
+              <TabsContent value="detected" className="mt-4"></TabsContent>
 
             <TabsContent value="json" className="mt-4 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 border-b-4 border-t-4 border-[#ff3f34]">
               <JsonEditor
@@ -383,15 +385,15 @@ const Annotate = () => {
             </TabsContent>
           </Tabs>
         </div>
+        <ExportDialog
+          open={exportOpen}
+          onOpenChange={setExportOpen}
+          images={images}
+          annotations={annotations}
+          projectMeta={{ name: "Khmer Data Annotation Tool", lang }}
+        />
       </div>
-      <Footer/>
-      <ExportDialog
-        open={exportOpen}
-        onOpenChange={setExportOpen}
-        images={images}
-        annotations={annotations}
-        projectMeta={{ name: "Khmer Data Annotation Tool", lang }}
-      />
+      <Footer />
     </div>
   );
 };

@@ -12,6 +12,7 @@ import Sitharath from '../assets/profiles/SitharathSREY.jpg';
 import Seila from '../assets/profiles/SeilaMANH.jpg';
 import Soklong from '../assets/profiles/SoklongHIM.jpg';
 import Hongly from '../assets/profiles/HonglyVA.jpg';
+import Kimlang from '../assets/profiles/KimlangSO.png';
 const About = () => {
   // Define mission and vision here
   const mission = "Enable students and researchers to build high-quality Khmer OCR datasets efficiently through intuitive annotation, and easy validation.";
@@ -37,7 +38,7 @@ const About = () => {
 
   const mentor = [
     {
-      image: 'https://scontent.fpnh11-1.fna.fbcdn.net/v/t39.30808-6/512683832_4080991892220013_7363994635588506334_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEvO6OFygU25ecZ20ap2sxQeZGBUPAQ_pB5kYFQ8BD-kAWKt5wUXVjxhNqL3zdMC1hq-Oew4uaaUHm5V5r4o3Xt&_nc_ohc=66qpKwGEGhoQ7kNvwFxrr5X&_nc_oc=Admy94_AObYZ-2_Pr0Q025fHhHFTfIuesLmtu2pMvVEgDoZTnSB1Z2cXleTVcK6ZuLE&_nc_zt=23&_nc_ht=scontent.fpnh11-1.fna&_nc_gid=LxGv_nxRTaCJIphtS2wJFA&oh=00_AfU0q6s-ngrFAcJ-92qmt_R55JfBFOCsgc9mhfDxlx_twQ&oe=68A32E70',
+      image: Kimlang,
       name: 'Ms. Kimlang SO',
       title: 'Senior AI Specialist',
       description: 'Guides the team with AI expertise and research insight.',
@@ -50,57 +51,64 @@ const About = () => {
       name: 'Punleu TY',
       title: 'Data Engineer',
       description: 'Guides the team with AI expertise and research insight.',
-      // contact: 'punleu.ty@student.cadt.edu.kh',
+      contact: 'punleu.ty@student.cadt.edu.kh',
     },
     {
       image: Sitharath,
       name: 'Sitharath SREY',
       title: 'Data Engineer',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'sitharath.srey@student.cadt.edu.kh',
     },
     {
       image: Mengeang,
       name: 'Mengeang ENG',
       title: 'Data Engineer',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'mengeang.eng@student.cadt.edu.kh',
     },
     {
       image: Sievlinh,
       name: 'Sievlinh KHEAN',
       title: 'Frontend Dev',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'sievlinh.khean@student.cadt.edu.kh',
     },
     {
       image: Jessica,
       name: 'Jessica KIM',
       title: 'Frontend Dev',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'jessica.kim@student.cadt.edu.kh',
     },
     {
       image: Seila,
       name: 'Seila MANH',
       title: 'Backend Dev',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'seila.manh@student.cadt.edu.kh',
     },
     {
       image: Yanghai,
       name: 'Yanghai POV',
       title: 'Backend Dev',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'yanghai.pov@student.cadt.edu.kh',
     },
     {
       image: Lyheng,
       name: 'Lyheng Touch',
       title: 'Backend Dev',
       description: 'Guides the team with AI expertise and research insight.',
+      contact: 'lyheng.touch@student.cadt.edu.kh',
     },
   ];
 
   return (
     <>
     <div className="min-h-full bg-white p-6">
-      <h1 className=" text-5xl text-[#ff3f34] font-cadt">About Page</h1>
-      <h4 className="text-xl py-4  text-[#12284c] ">We aim to accelerate Khmer OCR dataset creation with a simple, practical web tool for annotation and validation.</h4>
+      <h1 className=" text-5xl text-[#ff3f34] font-cadt flex justify-center">About Page</h1>
+      <h4 className="text-xl py-4  text-[#12284c] flex justify-center">We aim to accelerate Khmer OCR dataset creation with a simple, practical web tool for annotation and validation.</h4>
       {/* Mission and Vision Section */}
       <div className="flex-grow">
         <MissionVision mission={mission} vision={vision} />
