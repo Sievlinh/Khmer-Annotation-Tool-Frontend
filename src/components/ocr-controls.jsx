@@ -44,8 +44,8 @@ const { t } = useI18n()
             <SelectValue placeholder="Select OCR language" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="khm">khm (Khmer)</SelectItem>
-            <SelectItem value="eng">eng (English)</SelectItem>
+            <SelectItem value="khm">KH (Khmer)</SelectItem>
+            <SelectItem value="eng">EN (English)</SelectItem>
           </SelectContent>
         </Select>
       </div>
