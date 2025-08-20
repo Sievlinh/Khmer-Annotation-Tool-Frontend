@@ -18,7 +18,8 @@ const Sidebar = () => {
   const navigationItems = [
     { name: "Home", path: "/", icon: FaHome },
     { name: "Feature", path: "/feature", icon: FaWandMagicSparkles },
-    { name: "Annotate", path: "/annotate", icon: MdOutlineUploadFile },
+    // { name: "Annotate", path: "/annotate", icon: MdOutlineUploadFile },
+    { name: "Annotate", path: "/project", icon: MdOutlineUploadFile },
     { name: "About", path: "/about", icon: RiErrorWarningLine },
   ];
   return (
