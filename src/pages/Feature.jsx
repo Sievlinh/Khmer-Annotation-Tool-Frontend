@@ -9,8 +9,8 @@ import Footer from '../components/Footer';
 
 const SidebarItem = () => {
   return (
-<div className=" text-[#12284c] rounded-lg p-6 text-center mt-6 shadow-md bg-white transform">
-      <h2 className="text-3xl font-bold mb-2">Ready to Validate Your Data?</h2>
+<div className=" text-[#12284c] rounded-lg p-6 text-center mt-6 shadow-md bg-gray-50 transition-transform">
+      <h2 className="text-3xl font-bold mb-2">Ready to Annotate Your Data?</h2>
       <p className="mb-6 text-1xl">
         Upload your datasets Khmer or English and get detailed validation results in seconds!
       </p>
@@ -28,7 +28,7 @@ const featuresData = [
   {
     icon: FiUpload,
     title: "Upload Dataset",
-    description: "Easily upload your dataset in multiple formats.",
+    description: "Easily upload your image with the format (JPG/PNG).",
     tag: "Dataset",
   },
   {
@@ -58,7 +58,7 @@ const featuresData = [
   {
     icon: PiExportBold,
     title: "Export",
-    description: "Export processed data in multiple output formats.",
+    description: "Export processed data in JSON.",
     tag: "Output",
   },
 ];
@@ -66,10 +66,10 @@ const Features = () => {
   return (
     <div className="min-h-full bg-gray-50">
     <main className="flex-1 p-8 bg-gray-50 overflow-y-auto">
-      <h1 className="text-5xl font-cadt text-[#ff3f34] mb-2 text-center">
-        Powerful Features
+      <h1 className="text-5xl font-cadt text-[#ff3f34] mb-2 ">
+        Feature
       </h1>
-      <p className="text-gray-600 text-center mb-8">
+      <p className="text-gray-600 text-lg mt-10 mb-10">
         Everything you need to validate, clean, and improve your EN and KH datasets.
       </p>
 
@@ -77,14 +77,16 @@ const Features = () => {
         {featuresData.map((f, i) => (
           <div
             key={i}
-            className="bg-white rounded-lg shadow p-4 flex space-x-4 hover:shadow-lg transition"
+            div className="bg-white rounded-lg shadow p-4 flex space-x-4 
+                hover:bg-red-50 hover:shadow-lg transition 
+                duration-300 ease-in-out"
           >
             <div className="text-3xl text-gray-500 border-r p-6  flex border-blue-200">
               <f.icon />
             </div>
             <div>
               <h2 className="font-semibold text-gray-600 text-lg">{f.title}</h2>
-              <span className="inline-block px-2 py-0.5 mt-1 text-xs bg-blue-100 text-blue-600 rounded">
+              <span className="inline-block px-2 py-0.5 mt-1 text-xs bg-red-100 text-gray-600 rounded">
                 {f.tag}
               </span>
               <p className="text-sm text-gray-600 mt-2">{f.description}</p>
