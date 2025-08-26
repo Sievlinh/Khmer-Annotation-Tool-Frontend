@@ -3,7 +3,7 @@ import Sidebar from "./navigate";
 
 const Layout = () => {
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-white">
       {/* Fixed Sidebar Navigation */}
       <Sidebar />
 

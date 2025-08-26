@@ -229,13 +229,18 @@ export const Home = () => {
               </a>
 
               {/* Scroll Button */}
-              <a
-                href="#instructions"
-                className="bg-[#76bc21] text-white px-10 py-3 rounded-2xl flex items-center gap-2 font-cadt"
+              <button
+                onClick={() => {
+                  const element = document.getElementById("instructions");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }}
+                className="bg-[#76BC21] text-white px-10 py-3 rounded-2xl flex items-center gap-2 font-cadt hover:opacity-90 active:scale-95 transition"
               >
-                {" "}
-                Instruction <MdOutlineArrowDropDown />{" "}
-              </a>
+                Instruction <MdOutlineArrowDropDown />
+              </button>
+
             </div>
           </div>
           {/* Right Image Panel */}
