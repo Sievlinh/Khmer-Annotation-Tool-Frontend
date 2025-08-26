@@ -14,7 +14,7 @@ const Sidebar = () => {
   };
 
   const navigationItems = [
-    { name: "My Project", path: "/myproject", icon: FaSortAmountUp },
+    { name: "My Project", path: "/project", icon: FaSortAmountUp },
     { name: "Home", path: "/", icon: FaHome },
     { name: "Feature", path: "/feature", icon: FaWandMagicSparkles },
     { name: "Annotate", path: "/annotate", icon: MdOutlineUploadFile },
@@ -45,7 +45,9 @@ const Sidebar = () => {
               }
             >
               <Icon className="w-6 h-6" />
-              <span className="hidden md:inline ml-6 font-bold text-sm">{item.name}</span>
+              <span className="hidden md:inline ml-6 font-bold text-sm">
+                {item.name}
+              </span>
             </NavLink>
           );
         })}
